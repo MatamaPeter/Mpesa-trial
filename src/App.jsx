@@ -38,6 +38,7 @@ const PaymentForm = () => {
     setLoading(true);
 
     try {
+      console.log(import.meta.env.VITE_BACKEND_URL);
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/initiate-payment`, { phone, amount });
       setMessage('✅ Payment initiated successfully. Check your phone to complete the payment.');
     } catch (error) {
